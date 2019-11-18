@@ -1,0 +1,18 @@
+{
+  "name": "driving",
+  "version": "1.0.0",
+  "description": "smoothness calculations and graphs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.15.5"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "author": "Ben Wakefield",
+  "license": "ISC"
+}
