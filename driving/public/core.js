@@ -4,7 +4,13 @@ const h = 300;
 const rectWidth = 10;
 const rectHeight = 10;
 
-const svg = d3.select("body")
+const chart = d3.select("#chart")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h)
+              .attr("class","chart");
+
+const steeringChart = d3.select("#steering")
               .append("svg")
               .attr("width", w)
               .attr("height", h)
@@ -13,7 +19,6 @@ const svg = d3.select("body")
 d3.request("./assets/ModifiedData.csv")
 		.mimeType("text/csv")
 		.response(function (xhr) {
-			//console.log (d3.csvParse(xhr.responseText)); 
 			var data = d3.csvParse(xhr.responseText);
 			var formattedArr = [];
 			data.forEach((d) => {
@@ -23,10 +28,8 @@ d3.request("./assets/ModifiedData.csv")
 			return formattedArr;
 		})
 		.get(function(data) {
-			console.log(data);
 
 			var maxSpeed = d3.max(data, datum => datum[1]);
-			console.log(maxSpeed);
 			var yScale = d3.scaleLinear()
 				.domain([0, maxSpeed])
 				.range([h, 0]);
@@ -38,16 +41,15 @@ d3.request("./assets/ModifiedData.csv")
 			      .domain([0, data.length])
 			      .range([21, w]);
 
-			svg.append("g")
+			chart.append("g")
 			      .attr("transform", "translate(0," + h + ")")
 			      .call(d3.axisBottom(xScale));
 
-			d3.select('svg')
-				.append('g')
+			chart.append('g')
 				.attr('transform', 'translate(20,10)')
 				.call(yAxis);
 
-			svg.append("path")
+			chart.append("path")
 		      .datum(data)
 		      .attr("fill", "none")
 		      .attr("stroke", "steelblue")
@@ -64,7 +66,7 @@ d3.request("./assets/ModifiedData.csv")
 				.domain([0, maxBrake])
 				.range([h, 0]);
 
-			svg.append("path")
+			chart.append("path")
 		      .datum(data)
 		      .attr("fill", "none")
 		      .attr("stroke", "red")
@@ -81,7 +83,7 @@ d3.request("./assets/ModifiedData.csv")
 				.domain([0, maxGas])
 				.range([h, 0]);
 		      
-		    svg.append("path")
+		    chart.append("path")
 		      .datum(data)
 		      .attr("fill", "none")
 		      .attr("stroke", "black")
@@ -91,6 +93,8 @@ d3.request("./assets/ModifiedData.csv")
 		        .x(function(d,i) {return xScale(i) })
 		        .y(function(d) { return gasYScale(d[3]) })
 		    ); 
+
+		    drawSteeringChart(data);
 		});
 
 function toggleSpeed() {
@@ -106,4 +110,33 @@ function toggleBrake() {
 function toggleGas() {
 	var opacity = d3.select("#gas").style("opacity");
 	d3.selectAll("#gas").transition().style("opacity", opacity == 1 ? 0:1)
+}
+
+function drawSteeringChart(data) {
+
+	var yScale = d3.scaleLinear()
+				   .domain([-1,1])
+				   .range([h-20, 10])
+
+	var xScale = d3.scaleLinear()
+			       .domain([0, data.length])
+			       .range([31, w]);
+
+	var yAxis = d3.axisLeft()
+				  .scale(yScale);
+    
+    steeringChart.append('g')
+				.attr('transform', 'translate(30,10)')
+				.call(yAxis);
+ 
+ 	steeringChart.append("path")
+		      .datum(data)
+		      .attr("fill", "none")
+		      .attr("stroke", "red")
+		      .attr("stroke-width", 1.5)
+		      .attr("id", "steering")
+		      .attr("d", d3.line()
+		        .x(function(d,i) {return xScale(i) })
+		        .y(function(d) { return yScale(d[4]) })
+		 	  );   
 }
