@@ -1,5 +1,5 @@
-const w = 500;
-const h = 200;
+const w = 800;
+const h = 300;
 
 const rectWidth = 10;
 const rectHeight = 10;
@@ -29,18 +29,18 @@ d3.request("./assets/ModifiedData.csv")
 			console.log(maxSpeed);
 			var yScale = d3.scaleLinear()
 				.domain([0, maxSpeed])
-				.range([h-20, 0]);
+				.range([h, 0]);
 			
 			var yAxis = d3.axisLeft()
 					.scale(yScale);
 			
-			var xAxis = d3.scaleLinear()
+			var xScale = d3.scaleLinear()
 			      .domain([0, data.length])
-			      .range([20, w]);
+			      .range([21, w]);
 
 			svg.append("g")
 			      .attr("transform", "translate(0," + h + ")")
-			      .call(d3.axisBottom(xAxis));
+			      .call(d3.axisBottom(xScale));
 
 			d3.select('svg')
 				.append('g')
@@ -52,29 +52,58 @@ d3.request("./assets/ModifiedData.csv")
 		      .attr("fill", "none")
 		      .attr("stroke", "steelblue")
 		      .attr("stroke-width", 1.5)
+		      .attr("id", "speed")
 		      .attr("d", d3.line()
-		        .x(function(d,i) {return xAxis(i) })
+		        .x(function(d,i) {return xScale(i) })
 		        .y(function(d) { return yScale(d[1]) })
 		    );
-			/*
+
+			var maxBrake = d3.max(data, datum => datum[2]);
+
+			var brakeYScale = d3.scaleLinear()
+				.domain([0, maxBrake])
+				.range([h, 0]);
+
 			svg.append("path")
 		      .datum(data)
 		      .attr("fill", "none")
 		      .attr("stroke", "red")
 		      .attr("stroke-width", 1.5)
+		      .attr("id", "brake")
 		      .attr("d", d3.line()
-		        .x(function(d,i) {return xAxis(i) })
-		        .y(function(d) { return yScale(d[1]) })
+		        .x(function(d,i) {return xScale(i) })
+		        .y(function(d) { return brakeYScale(d[2]) })
 		    );
 
+		    var maxGas = d3.max(data, datum => datum[3]);
+
+			var gasYScale = d3.scaleLinear()
+				.domain([0, maxGas])
+				.range([h, 0]);
+		      
 		    svg.append("path")
 		      .datum(data)
 		      .attr("fill", "none")
 		      .attr("stroke", "black")
 		      .attr("stroke-width", 1.5)
+		      .attr("id", "gas")
 		      .attr("d", d3.line()
-		        .x(function(d,i) {return xAxis(i) })
-		        .y(function(d) { return yScale(d[1]) })
-		    );
-		    */
+		        .x(function(d,i) {return xScale(i) })
+		        .y(function(d) { return gasYScale(d[3]) })
+		    ); 
 		});
+
+function toggleSpeed() {
+	var opacity = d3.select("#speed").style("opacity");
+	d3.selectAll("#speed").transition().style("opacity", opacity == 1 ? 0:1)
+}
+
+function toggleBrake() {
+	var opacity = d3.select("#brake").style("opacity");
+	d3.selectAll("#brake").transition().style("opacity", opacity == 1 ? 0:1)
+}
+
+function toggleGas() {
+	var opacity = d3.select("#gas").style("opacity");
+	d3.selectAll("#gas").transition().style("opacity", opacity == 1 ? 0:1)
+}
