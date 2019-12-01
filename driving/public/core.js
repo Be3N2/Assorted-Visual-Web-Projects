@@ -1,8 +1,6 @@
-const w = 800;
-const h = 300;
-
-const rectWidth = 10;
-const rectHeight = 10;
+//import {drawSteeringChart} from './steering.js';
+window.w = 800;
+window.h = 300;
 
 const chart = d3.select("#chart")
               .append("svg")
@@ -10,44 +8,44 @@ const chart = d3.select("#chart")
               .attr("height", h)
               .attr("class","chart");
 
-const steeringChart = d3.select("#steering")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h)
-              .attr("class","chart");
-
-d3.request("./assets/ModifiedData.csv")
+d3.request("./assets/Data2.csv")
 		.mimeType("text/csv")
 		.response(function (xhr) {
 			var data = d3.csvParse(xhr.responseText);
 			var formattedArr = [];
 			data.forEach((d) => {
-				var formatted = [+d["Fail Time"], +d.Speed, +d.Brake, +d.Gas, +d.Steering, +d["X-Position"], +d["Z-Position"]];
+				var formatted = [+d["Fail Time"], +d.Speed, +d.Brake, +d.Gas, +d.Steering, +d["X-Position"], +d["Z-Position"], +d["Cosine Curves"]];
 				formattedArr.push(formatted);
 			});
 			return formattedArr;
 		})
 		.get(function(data) {
 
+			let padding = 30;
+
 			var maxSpeed = d3.max(data, datum => datum[1]);
+			
 			var yScale = d3.scaleLinear()
 				.domain([0, maxSpeed])
-				.range([h, 0]);
-			
-			var yAxis = d3.axisLeft()
-					.scale(yScale);
+				.range([h-padding, padding]);
 			
 			var xScale = d3.scaleLinear()
 			      .domain([0, data.length])
-			      .range([21, w]);
+			      .range([padding, w-padding]);
 
-			chart.append("g")
-			      .attr("transform", "translate(0," + h + ")")
-			      .call(d3.axisBottom(xScale));
+			var yAxis = d3.axisLeft()
+					.scale(yScale);
+
+			var xAxis = d3.axisBottom()
+					.scale(xScale);
 
 			chart.append('g')
-				.attr('transform', 'translate(20,10)')
+				.attr('transform', 'translate('+padding+',0)')
 				.call(yAxis);
+
+			chart.append("g")
+			      .attr("transform", "translate(0," + (h-padding )+ ")")
+			      .call(xAxis);
 
 			chart.append("path")
 		      .datum(data)
@@ -64,7 +62,7 @@ d3.request("./assets/ModifiedData.csv")
 
 			var brakeYScale = d3.scaleLinear()
 				.domain([0, maxBrake])
-				.range([h, 0]);
+				.range([h-padding, padding]);
 
 			chart.append("path")
 		      .datum(data)
@@ -74,14 +72,14 @@ d3.request("./assets/ModifiedData.csv")
 		      .attr("id", "brake")
 		      .attr("d", d3.line()
 		        .x(function(d,i) {return xScale(i) })
-		        .y(function(d) { return brakeYScale(d[2]) })
+		        .y(function(d,i) {return brakeYScale(d[2])})
 		    );
 
 		    var maxGas = d3.max(data, datum => datum[3]);
 
 			var gasYScale = d3.scaleLinear()
 				.domain([0, maxGas])
-				.range([h, 0]);
+				.range([h-padding, padding]);
 		      
 		    chart.append("path")
 		      .datum(data)
@@ -95,6 +93,32 @@ d3.request("./assets/ModifiedData.csv")
 		    ); 
 
 		    drawSteeringChart(data);
+
+		    var ySteeringScale = d3.scaleLinear()
+				   .domain([-1,1])
+				   .range([h-padding, padding])
+
+			var xSteeringScale = d3.scaleLinear()
+			       .domain([0, data.length])
+			       .range([padding, w-padding]);
+			var ySteeringAxis = d3.axisRight()
+				  .scale(ySteeringScale);
+
+			chart.append('g')
+				.attr('transform', 'translate('+ (w - padding)+',0)')
+				.attr("id", "steeringOverlay")
+				.call(ySteeringAxis);
+
+			chart.append("path")
+		      .datum(data)
+		      .attr("fill", "none")
+		      .attr("stroke", "green")
+		      .attr("stroke-width", 1.5)
+		      .attr("id", "steeringOverlay")
+		      .attr("d", d3.line()
+		        .x(function(d,i) {return xSteeringScale(i) })
+		        .y(function(d) { return ySteeringScale(d[4]) })
+		 	  ); 
 		});
 
 function toggleSpeed() {
@@ -112,31 +136,8 @@ function toggleGas() {
 	d3.selectAll("#gas").transition().style("opacity", opacity == 1 ? 0:1)
 }
 
-function drawSteeringChart(data) {
-
-	var yScale = d3.scaleLinear()
-				   .domain([-1,1])
-				   .range([h-20, 10])
-
-	var xScale = d3.scaleLinear()
-			       .domain([0, data.length])
-			       .range([31, w]);
-
-	var yAxis = d3.axisLeft()
-				  .scale(yScale);
-    
-    steeringChart.append('g')
-				.attr('transform', 'translate(30,10)')
-				.call(yAxis);
- 
- 	steeringChart.append("path")
-		      .datum(data)
-		      .attr("fill", "none")
-		      .attr("stroke", "red")
-		      .attr("stroke-width", 1.5)
-		      .attr("id", "steering")
-		      .attr("d", d3.line()
-		        .x(function(d,i) {return xScale(i) })
-		        .y(function(d) { return yScale(d[4]) })
-		 	  );   
+function toggleSteering() {
+	var opacity = d3.select("#steeringOverlay").style("opacity");
+	d3.selectAll("#steeringOverlay").transition().style("opacity", opacity == 1 ? 0:1);;
 }
+

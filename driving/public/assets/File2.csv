@@ -1,0 +1,403 @@
+Part. Name,Fail Time,Take Over Quality,,,,,,,
+,,MLB,SLA,,,,,,
+,,Speed,Brake ,Gas,Steering,X-Position,Z-Position,Out/At Intersection,Traffic Light
+P 11/21/2019 1:18:01 PM,,,,,,,,N/A,N/A
+,3,28.79575,0,0,0,-6.8,235.5,N/A,N/A
+,,29.07221,0,0,0,-9.6,237.2,N/A,N/A
+,,30.03224,0,0,0,-20,243.5,N/A,N/A
+,,31.76071,0,0,0,-31.7,250.6,N/A,N/A
+,,30.11258,0,0,0,-43.9,258.1,N/A,N/A
+,,28.77075,0,0,0,-54.7,264.6,N/A,N/A
+,,11.28785,0,0,0,-133,307.6,N/A,N/A
+,,16.84225,0,0,0,-138.6,310.5,N/A,N/A
+,,15.31645,63.52942,0,0,-144.7,313.8,N/A,N/A
+,,0.3997134,65.09804,0,-0.0683951,-147.3,315.3,N/A,N/A
+,,1.89E-06,0,39.60785,-0.07839159,-147.3,315.3,N/A,N/A
+,,5.933805,0,0,-0.1656615,-148.8,316,N/A,N/A
+,,11.31495,0,0,-0.4570315,-152.2,317.5,N/A,N/A
+,,12.23735,49.41177,0,-0.7796788,-158.1,318,N/A,N/A
+,,3.462369,0,70.19608,-0.7381902,-160.3,317.1,N/A,N/A
+,,9.671744,0,100,-0.5261483,-163,314.9,N/A,N/A
+,,14.896,0,100,0,-166.2,310.4,N/A,N/A
+,,30.07933,0,0,0,-193.8,263.1,N/A,N/A
+,,27.68003,0,0,0,-200.9,250.6,N/A,N/A
+,,24.78676,60.39216,0,0,-206.1,241.2,N/A,N/A
+,,9.301633,98.03922,0,0,-209.3,235.3,N/A,N/A
+,,9.50E-05,100,0,0,-209.7,234.6,N/A,N/A
+,,9.25E-08,0,0,0,-209.7,234.6,N/A,N/A
+,,1.00E-07,0,0,0,-209.7,234.6,N/A,N/A
+,,,,,,,,N/A,N/A
+,7,10.71939,0,0,0,27.4,402.4,N/A,N/A
+,,16.60559,0,0,0,24.4,396.9,N/A,N/A
+,,18.79181,0,0,0.001424784,20.7,390.1,N/A,N/A
+,,16.7859,0,0,0.02328826,16.8,383,N/A,N/A
+,,14.88581,0,0,-0.01608221,13.6,377.1,N/A,N/A
+,,13.17621,0,0,-0.06637128,10.7,371.8,N/A,N/A
+,,8.229801,87.05882,0,0.08026209,8.7,367.6,N/A,N/A
+,,2.28E-05,100,0,0.05839862,8.4,366.9,N/A,N/A
+,,6.09E-07,100,0,0.0366578,8.4,366.9,N/A,N/A
+,,2.33E-07,100,0,0.001210136,8.4,366.9,N/A,N/A
+,,1.69E-07,100,0,0,8.4,366.9,N/A,N/A
+,,4.33E-07,100,0,0,8.4,366.9,N/A,N/A
+,,6.89E-08,0,0,0,8.4,366.9,N/A,N/A
+,,1.02E-07,0,0,0,8.4,366.9,N/A,N/A
+,,1.00E-07,0,0,0,8.4,366.9,N/A,N/A
+,,1.67E-07,0,0,0,8.4,366.9,N/A,N/A
+,,1.16E-06,0,0,0,8.4,366.9,N/A,N/A
+,,2.33E-07,0,0,0,8.4,366.9,N/A,N/A
+,,8.99E-07,29.01961,0,0,8.4,366.9,N/A,N/A
+,,2.460384,0,34.90196,-0.06940701,8.3,366.6,N/A,N/A
+,,8.524907,0,0,-0.3047537,7.1,364,N/A,N/A
+,,13.71106,0,13.72549,-0.4230557,6,359,N/A,N/A
+,,18.29283,0,0,-0.5645396,7,352,N/A,N/A
+,,23.00298,0,0,-0.06502206,14.2,344.8,N/A,N/A
+,3,22.95337,0,0,0,152.2,367.3,N/A,N/A
+,,23.06306,0,0,0,157.7,377,N/A,N/A
+,,23.16439,0,0,0,162.7,385.5,N/A,N/A
+,,23.12998,0,0,0,167.7,394.1,N/A,N/A
+,,23.4593,0,72.54902,0,173.4,403.7,N/A,N/A
+,,26.95181,0,96.07843,-0.04956737,178.8,412.8,N/A,N/A
+,,30.34392,0,100,0,185.5,424.9,N/A,N/A
+,,30.3428,0,100,0,191.8,436.2,N/A,N/A
+,5,13.42684,0,0,0,215.3,487.8,N/A,N/A
+,,17.81895,0,0,0,211.8,481.4,N/A,N/A
+,,19.83208,0,0,0,207.5,474.6,N/A,N/A
+,,22.93122,0,100,0,202.2,466.4,N/A,N/A
+,,26.97787,0,100,0,195.9,456.8,N/A,N/A
+,,30.29646,0,100,-0.03779236,188.8,446.3,N/A,N/A
+,,30.2761,0,100,-0.02610936,181.9,435.3,N/A,N/A
+,,30.21065,0,0,0,175.2,423.6,N/A,N/A
+,,,,,,,,N/A,N/A
+P 11/21/2019 1:36:18 PM,,,,,,,,N/A,N/A
+,3,26.97551,0,0,0,5.8,227.8,N/A,N/A
+,,28.66272,0,0,0,-4.7,234.1,N/A,N/A
+,,29.7329,40,0,0,-15.8,240.9,N/A,N/A
+,,18.83014,96.47059,0,-0.01221853,-25,246.5,N/A,N/A
+,,5.391527,98.03922,0,0.006331035,-28.5,248.6,N/A,N/A
+,,1.16E-05,0,0,0,-28.6,248.7,N/A,N/A
+,,5.09E-07,0,0,0,-28.6,248.7,N/A,N/A
+,,5.19E-07,0,8.235294,0,-28.6,248.7,N/A,N/A
+,,8.93E-07,0,100,0,-28.6,248.7,N/A,N/A
+,,5.06E-07,0,2.745098,0,-28.6,248.7,N/A,N/A
+,,0.4949739,0,100,0,-28.7,248.7,N/A,N/A
+,,6.536088,0,0,0,-30.3,249.7,N/A,N/A
+,,12.23601,0,0,-0.02549607,-34.3,252.2,N/A,N/A
+,,16.30336,0,21.56863,-0.007373611,-40,255.6,N/A,N/A
+,,22.04156,0,95.29412,0,-48.5,260.6,N/A,N/A
+,,25.82066,0,100,-0.030341,-57.2,265.9,N/A,N/A
+,,27.20511,0,0,0,5.5,227.9,out of intersection,Red
+,,28.94757,0,0,0,-5.9,234.9,out of intersection,Red
+,,29.8901,0,0,0,-16.7,241.5,out of intersection,Red
+,,30.46404,0,0,0,-27.6,248.1,out of intersection,Red
+,,27.42859,0,0,0,-40.5,256,In intersection,Red
+,,23.87696,93.33334,0,0,-48.8,261,In intersection,Red
+,,2.378594,93.33334,0,-0.01123728,-52.3,263.6,In intersection,Red
+,,3.04E-05,0,0,0,-52.3,263.6,In intersection,Green
+,,3.99E-07,0,0,0,-52.3,263.6,In intersection,Green
+,3,22.4558,0,0,0,-105.5,288.2,out of intersection,Red
+,,22.8554,0,0,0,-97.3,283.7,out of intersection,Red
+,,23.09595,0,0,0.01623552,-87.7,278.6,out of intersection,Red
+,,20.70817,0,0,0.03632049,-79.3,274.1,out of intersection,Red
+,,11.84703,100,0,-0.0652367,-73.1,270.5,out of intersection,Red
+,,0.000119038,0,0,0.006821658,-71.6,269.8,out of intersection,Red
+,,1.82E-07,0,100,-0.01721678,-71.6,269.8,out of intersection,Red
+,,6.99E-07,0,0,0,-71.6,269.8,out of intersection,Red
+,,2.064373,0,100,0,-71.4,269.6,out of intersection,Red
+,,6.891493,0,0,0,-69.1,268.4,out of intersection,Red
+,,13.31437,0,0,0,-64.8,266,In intersection,Red
+,,18.21501,0,0,0.006208378,-58.4,262.3,In intersection,Green
+,,19.50482,0,0,0.00630037,-50.8,257.8,In intersection,Green
+,,22.99584,0,49.01961,-0.01056267,-42.4,252.5,In intersection,Green
+,,18.99588,0,0,0,10.8,139.5,out of intersection,Red
+,,19.16801,0,0,0,7,132.4,out of intersection,Red
+,,18.78896,0,0,-0.004429862,3.2,125.4,out of intersection,Red
+,,13.758,65.09804,0,-0.01525428,-0.1,119.2,out of intersection,Red
+,,0.006767716,0,0,0,-1.2,117.2,out of intersection,Red
+,,2.245771,0,100,0,-1.4,116.9,out of intersection,Red
+,,6.337595,0,11.37255,0,-2.4,114.9,out of intersection,Red
+,,10.15961,0,69.41177,-0.008753495,-4.3,111.5,out of intersection,Red
+,,13.2993,0,66.27451,-0.0154076,-6.7,107,out of intersection,Red
+,,16.33934,0,38.82353,-0.000382206,-9.9,101,In intersection,Green
+,,19.02687,0,19.21569,0.04138006,-13.7,94.1,In intersection,Green
+,,21.52922,0,19.21569,-0.03653513,-18.9,85.4,In intersection,Green
+,,23.48152,0,0,-0.0318742,-23.7,77.2,In intersection,Green
+,,18.70381,0,0,0,-120.5,28,out of intersection,Green
+,,18.76399,0,0,0,-128.4,32.7,out of intersection,Green
+,,18.83946,0,0,0.01396639,-135.2,36.5,out of intersection,Green
+,,19.12534,0,56.07843,-0.01764607,-142.5,40.5,out of intersection,Green
+,,21.52204,0,73.33334,-0.01865799,-151.1,45.4,out of intersection,Green
+,,23.67162,0,100,-0.04076678,-159.8,50,In intersection,Green
+,,25.49657,0,10.58824,-0.00562576,-169.3,54.7,In intersection,Green
+,,27.17422,0,0,-0.000964823,-180.4,60.2,In intersection,Green
+,7,11.17048,0,0,0,-220.2,82.7,out of intersection,Green
+,,14.69945,0,0,0,-225.2,85.8,out of intersection,Green
+,,17.07731,0,0,0,-231.3,89.6,out of intersection,Green
+,,17.87169,0,0,0,-238.2,93.9,out of intersection,Green
+,,16.44882,0,0,-0.01166658,-244.5,97.7,out of intersection,Green
+,,14.83058,0,0,-0.01405838,-249.7,100.9,out of intersection,Green
+,,11.55529,0,0,-0.0130158,-255.1,104.2,out of intersection,Green
+,,8.487781,0,0,0,-258.8,106.3,out of intersection,Green
+,,5.73346,0,0,0.05079393,-261.2,107.8,out of intersection,Green
+,,7.638813,0,0,0.1265648,-263.6,109.3,In intersection,Green
+,,11.65448,0,0,0.3271078,-267.5,112.2,In intersection,Green
+,,8.715194,0,0,0.713475,-270.2,115.6,In intersection,Green
+,,5.828934,0,0,0.8340768,-271.2,118.3,In intersection,Green
+,,3.482785,0,22.35294,0.8710577,-271.2,120.2,In intersection,Green
+,,7.908379,0,12.15686,0.7554848,-270.5,123,In intersection,Green
+,,11.65248,0,0,-0.03267146,-268.2,126.9,In intersection,Green
+,,20.78943,0,0,0,221.6,542.3,out of intersection,Green
+,,21.58966,0,0,0,213.6,546.7,out of intersection,Green
+,,21.79509,0,0,0.03190487,205.4,551.2,out of intersection,Green
+,,23.94815,0,0,0.0200072,195.4,557.2,out of intersection,Green
+,,27.56744,0,0,-0.00433787,187,562.8,out of intersection,Green
+,,30.39494,0,100,-0.04358787,176.3,570,out of intersection,Green
+,,30.33694,0,54.50981,-0.02328826,164.1,577.5,out of intersection,Green
+,,30.34427,0,14.5098,-0.02785721,152.5,584,out of intersection,Green
+,,30.34176,0,0,-0.01197322,140.7,589.9,In intersection,Green
+,,30.34192,0,0,-0.009458767,128,596.1,In intersection,Green
+,3,23.22293,0,0,0,-248.1,-318.9,out of intersection,Green
+,,23.21395,0,0,0,-242.7,-310.6,out of intersection,Green
+,,23.19284,0,0,0.00139412,-236.7,-301.1,out of intersection,Green
+,,20.59028,0,0,-0.01942459,-231.8,-293.5,out of intersection,Green
+,,16.97087,0,0,0,-227.1,-286.2,out of intersection,Green
+,,7.797427,0,0,0,-224.5,-282,out of intersection,Green
+,,6.963315,0,0,-0.01123728,-222.8,-279.4,out of intersection,Green
+,,0.000363962,99.60784,0,0.0137824,-222,-278,out of intersection,Green
+,,1.11E-05,0,0,0.01543826,-222,-278,out of intersection,Green
+,,3.582975,0,56.86275,0.01543826,-221.6,-277.5,out of intersection,Green
+,,9.285221,0,0,-0.09357029,-220,-274.9,out of intersection,Green
+,,14.20132,0,0,-0.3787461,-217.4,-269.9,In intersection,Green
+,,17.93994,0,0,-0.4278086,-216.2,-262.5,In intersection,Green
+,,16.05161,0,0,-0.4715355,-218.4,-255.4,In intersection,Green
+,,13.70836,0,0,-0.01519295,-222.6,-250.6,In intersection,Green
+,7,23.36597,0,0,0,-294.5,-399.3,out of intersection,Green
+,,23.2394,0,0,0,-289.2,-390.9,out of intersection,Green
+,,23.42403,0,0,0,-283.6,-382,out of intersection,Green
+,,23.39791,0,0,0,-277.8,-372.8,out of intersection,Green
+,,23.40037,0,10.58824,0,-272.5,-364.3,out of intersection,Green
+,,20.58514,0,78.03922,0.0118199,-267.2,-356,out of intersection,Green
+,,18.12306,0,100,0,-262.8,-349.2,out of intersection,Green
+,,16.26433,0,100,0,-258.5,-342.5,out of intersection,Green
+,,13.98415,0,100,0,-255.1,-337.3,out of intersection,Green
+,,12.4885,0,0,0,-251.8,-332.3,out of intersection,Green
+,,11.00906,0,0,0,-248.6,-327.4,out of intersection,Green
+,,9.668266,0,0,0,-246.5,-324.2,out of intersection,Green
+,,10.29687,0,100,0,-244.1,-320.5,out of intersection,Green
+,,15.22086,0,78.03922,-0.01583689,-240.9,-315.7,out of intersection,Green
+,,20.12998,0,100,0,-236.1,-308.5,out of intersection,Green
+,,24.17045,0,100,-0.02126443,-230.8,-300.4,out of intersection,Green
+,,27.94422,0,92.15686,-0.02969705,-224.4,-290.7,out of intersection,Green
+,,30.27943,0,100,-0.004399199,-217,-278.7,out of intersection,Green
+,,30.59532,0,100,0,-210.2,-267.7,In intersection,Green
+,,30.27635,0,14.5098,-0.004552518,-202.9,-256.2,In intersection,Green
+,5,23.22297,0,0,0,-272.9,-357.4,out of intersection,Red
+,,23.17466,0,0,0,-267.4,-348.8,out of intersection,Red
+,,23.18584,0,0,0,-262,-340.2,out of intersection,Red
+,,23.65447,0,68.62746,-0.0051658,-256.2,-331.3,out of intersection,Red
+,,27.56603,0,25.4902,-0.0294824,-249.8,-321.3,out of intersection,Red
+,,30.33982,0,0,0.001516777,-242.5,-309.7,out of intersection,Red
+,,30.37284,0,0,-0.003632596,-235.9,-299.2,out of intersection,Red
+,,29.37917,0,0,-0.008630839,-228.3,-287.8,out of intersection,Red
+,,30.3531,0,64.70589,-0.01908728,-220.5,-276.1,out of intersection,Red
+,,30.34221,0,85.09804,-0.007986893,-213.5,-265.5,In intersection,Green
+,,30.34301,0,19.21569,-0.01206521,-205.7,-253.8,In intersection,Green
+,3,22.50301,0,0,0,-178,-79.2,out of intersection,Green
+,,22.7571,0,0,0,-186.4,-73.9,out of intersection,Green
+,,22.94199,0,0,0,-195.2,-68,out of intersection,Green
+,,23.04139,7.058824,0,0,-203.4,-62.4,out of intersection,Green
+,,16.46592,58.82353,0,0.01445701,-210.1,-57.9,out of intersection,Green
+,,1.545696,0,0,0,-212.8,-56,out of intersection,Green
+,,2.322213,0,96.07843,0,-213.1,-55.8,out of intersection,Green
+,,8.639699,0,0,0,-215.5,-54.2,out of intersection,Green
+,,13.89109,0,0,-0.000351542,-219.7,-51.3,out of intersection,Green
+,,18.793,0,78.82353,-0.001976738,-226.1,-46.8,In intersection,Green
+,,23.34271,0,100,-0.00841619,-234.3,-41.3,In intersection,Green
+,,27.28103,0,0,-0.01960857,-243.8,-34.8,In intersection,Green
+,5,17.22551,0,0,0,-273,-15.3,out of intersection,Green
+,,19.83,0,0,0,-280.3,-10.4,out of intersection,Green
+,,21.05341,0,30.19608,0,-287.1,-5.9,out of intersection,Green
+,,25.15441,0,0,-0.01086931,-295.7,-0.1,out of intersection,Green
+,,25.10226,0,0,-0.04797283,-305.5,6.5,out of intersection,Green
+,,16.95492,94.90196,0,-0.02785721,-313.6,11.5,out of intersection,Green
+,,7.603196,0,9.019608,0.09396893,-317.3,13.6,out of intersection,Green
+,,13.92627,0,0,0.1859918,-322,16.6,In intersection,Green
+,,17.76229,0,0,0.6415678,-326.8,21.5,In intersection,Green
+,,15.50568,0,0,0.9714518,-327.9,28.9,In intersection,Green
+,,13.84259,0,0,-0.01663416,-324.1,33.2,In intersection,Green
+,7,26.55573,0,0,0,-95.3,192,out of intersection,Green
+,,25.13903,0,0,0,-88.9,201.6,out of intersection,Green
+,,24.41027,0,0,0,-83.2,209.7,out of intersection,Green
+,,20.06275,0,0,0.01645018,-77,218.2,out of intersection,Green
+,,22.33998,0,0,-0.03208885,-71.6,225.6,out of intersection,Green
+,,22.2222,24.31373,0,-0.03773103,-65.6,234.1,out of intersection,Green
+,,5.855276,82.35294,0,0,-62.5,238.9,out of intersection,Green
+,,1.59E-05,32.15686,0,0,-62.4,239.2,out of intersection,Green
+,,8.04E-07,99.60784,0,0,-62.4,239.2,out of intersection,Green
+,,3.12E-07,63.52942,0,0,-62.4,239.2,out of intersection,Green
+,,6.37E-07,94.90196,0,0,-62.4,239.2,out of intersection,Green
+,,2.92E-07,96.47059,0,0,-62.4,239.2,out of intersection,Green
+,,1.415212,0,68.62746,0,-62.3,239.3,out of intersection,Green
+,,8.177821,0,61.56863,0,-60.8,241.7,out of intersection,Green
+,,13.33815,0,29.41177,-0.01740076,-58.1,245.9,out of intersection,Green
+,,18.03023,0,0,-0.01126795,-54.3,251.8,out of intersection,Green
+,,22.73184,0,0,0.004521854,-49.2,259.9,out of intersection,Green
+,,26.51948,0,0,-0.01519295,-42.9,269.5,out of intersection,Green
+,,20.54288,0,0,0,-14.8,367.5,out of intersection,Green
+,,21.6549,0,0,0,-23.1,371.2,out of intersection,Green
+,,22.40418,0,0,0,-32.6,376.2,out of intersection,Green
+,,22.71077,0,0,0,-40.7,380.8,out of intersection,Green
+,,22.8975,0,0,0.02341092,-49.6,385.7,out of intersection,Green
+,,14.12682,0,0,0,-56.6,389.6,out of intersection,Green
+,,12.17871,0,0,-0.01746209,-61.3,392.3,out of intersection,Green
+,,9.275496,77.64706,0,0,-65.9,394.9,In intersection,Green
+,,7.08E-05,100,0,0,-66.7,395.3,In intersection,Green
+,,1.60E-05,100,0,0,-66.7,395.3,In intersection,Green
+,,1.61E-05,100,0,0,-66.7,395.3,In intersection,Green
+,,1.61E-05,100,0,0,-66.7,395.3,In intersection,Green
+,,0.7514763,0,91.37255,-0.05241912,-66.8,395.4,In intersection,Green
+,,6.732478,0,0,-0.2995715,-68.5,396.3,In intersection,Green
+,,12.28466,0,0,-0.6264504,-73.1,397.7,In intersection,Green
+,,16.88138,0,0,-0.8197873,-79.3,396.5,In intersection,Green
+,,15.26999,0,0,0.07066424,-84.2,390.7,In intersection,Green
+,5,21.01251,0,0,0,-191.4,264.8,out of intersection,Green
+,,21.95054,0,0,0,-196.1,256.7,out of intersection,Green
+,,22.5363,0,0,0,-201.8,247.3,out of intersection,Green
+,,21.56081,25.88235,0,0,-206.6,239.4,out of intersection,Green
+,,10.65019,100,0,0,-210.1,233.6,In intersection,Green
+,,0.000166804,100,0,0.1024322,-210.7,232.6,In intersection,Green
+,,3.40E-07,87.05882,0,0.07609178,-210.7,232.6,In intersection,Green
+,,2.34E-07,88.62745,0,0,-210.7,232.6,In intersection,Green
+,,3.00E-07,0,0,0.0475742,-210.7,232.6,In intersection,Green
+,,1.545363,0,39.60785,0.1034441,-210.8,232.4,In intersection,Green
+,,7.466601,0,0,0.5746588,-212.1,230.6,In intersection,Green
+,,10.53592,0,0,1,-215.9,228,In intersection,Green
+,,9.326838,0,0,0.6350977,-219.9,228.1,In intersection,Green
+,,8.161297,0,0,0.01197322,-223.7,229.6,In intersection,Green
+,,12.16771,0,100,0.07247341,-227.7,231.6,In intersection,Green
+,7,30.08011,0,0,0,-265.4,253.8,out of intersection,Green
+,,30.06197,0,0,0,-278.5,260.1,out of intersection,Green
+,,28.87182,0,100,0,-291,266.2,out of intersection,Green
+,,30.40946,0,100,0,-301.6,271.5,out of intersection,Green
+,,30.40206,0,100,-0.02589471,-313.2,277.5,out of intersection,Green
+,,30.39865,0,100,-0.01056267,-325.6,283.5,out of intersection,Green
+,,30.42033,0,70.98039,0.000750175,-338.5,289.7,out of intersection,Green
+,,30.36289,0,16.07843,0.008354862,-350.1,295.6,out of intersection,Green
+,,30.42549,0,9.803922,0,-361.5,301.8,out of intersection,Green
+,,30.41939,0,9.803922,-0.02531209,-373.9,309,out of intersection,Green
+,,30.33678,0,100,0,-385.2,315.4,out of intersection,Green
+,,30.40608,0,100,0,-397.4,322.4,out of intersection,Green
+,,30.32333,0,9.019608,-0.03328475,-408.5,329.1,out of intersection,Green
+,3,30.15322,0,0,0,-446,349.3,out of intersection,Green
+,,27.35326,0,0,0,-457,354.8,out of intersection,Green
+,,25.58295,0,0,0,-467,360,out of intersection,Green
+,,24.45904,0,0,0,-477.6,365.9,out of intersection,Green
+,,17.20472,98.03922,0,0.004521854,-485.8,370.6,out of intersection,Green
+,,6.411736,0,0,0.02889979,-489,372.5,out of intersection,Green
+,,10.35172,0,100,0.04275994,-492.3,374.5,out of intersection,Green
+,,15.78898,0,0,0.04214666,-497.7,378.1,out of intersection,Green
+,,11.74569,99.60784,0,0.09743396,-502.7,381.9,out of intersection,Green
+,,0.000256541,100,0,0.09777127,-503.9,382.8,out of intersection,Green
+,,1.395465,0,0.3921569,0.02430018,-504,382.9,out of intersection,Green
+,,0.001761176,94.90196,0,0.02460682,-504.2,383.1,out of intersection,Green
+,,2.33E-05,0,0,0.02491346,-504.2,383.1,out of intersection,Green
+,,2.35E-05,0,21.56863,0.02500545,-504.2,383.1,out of intersection,Green
+,,5.552004,0,34.11765,-0.02745857,-505.5,384.2,out of intersection,Green
+,,11.18837,0,0,-0.2536981,-508.5,386.6,In intersection,Green
+,,16.21679,0,0,-0.4791709,-514.2,389.5,In intersection,Green
+,,20.68975,0,0,-0.3710494,-523,389.3,In intersection,Green
+,,18.02235,0,0,0,-529.9,385.4,In intersection,Green
+,3,23.44698,0,0,0,-246,-315.6,out of intersection,Green
+,,23.46609,0,0,0,-240.4,-306.9,out of intersection,Green
+,,23.47389,0,0,0,-235.1,-298.5,out of intersection,Green
+,,18.06367,10.19608,0,0,-230.2,-290.9,out of intersection,Green
+,,4.839091,0,0,0,-227.7,-287,out of intersection,Green
+,,5.550348,0,0,0,-226.5,-285,out of intersection,Green
+,,0.000661446,87.05882,0,0,-225.8,-283.9,out of intersection,Green
+,,8.64E-06,100,0,0,-225.8,-283.9,out of intersection,Green
+,,8.20E-06,38.43137,0,0,-225.8,-283.9,out of intersection,Green
+,,0.7948427,0,0,0,-225.7,-283.7,out of intersection,Green
+,,2.204383,0,34.11765,0,-225.3,-283.1,out of intersection,Green
+,,9.668026,0,18.43137,0.005135136,-223.7,-280.6,out of intersection,Green
+,,16.28442,0,62.35294,0.038099,-220.4,-275.7,out of intersection,Green
+,,22.1111,0,100,-0.05180584,-215,-268.2,In intersection,Green
+,,27.84013,0,0,-0.002007402,-208.8,-259.1,In intersection,Green
+,,24.60495,0,0,0,-168,-85.1,out of intersection,Green
+,,25.2117,0,0,0,-177.1,-79.8,out of intersection,Green
+,,25.58671,0,0,0,-186.9,-73.6,out of intersection,Green
+,,28.03061,0,92.94118,0,-196.7,-66.9,out of intersection,Green
+,,30.50395,0,0,-0.006576347,-207,-59.7,out of intersection,Green
+,,22.49683,43.13726,0,-0.01859666,-216.8,-52.7,out of intersection,Green
+,,6.938065,61.96078,0,-0.1778351,-221.6,-49.5,In intersection,Green
+,,9.316228,0,20,-0.45004,-224.3,-48,In intersection,Green
+,,15.72108,0,0,-0.4683465,-229.9,-46.8,In intersection,Green
+,,21.57652,0,0,-0.5537766,-238,-49,In intersection,Green
+,,20.44398,0,0,0.008140213,-243.7,-56,In intersection,Green
+,5,29.40813,0,0,0,-258,-79.6,out of intersection,Green
+,,29.79192,0,100,-0.006852323,-265.5,-91.2,In intersection,Green
+,,30.47113,0,60,-0.057816,-272.7,-102.4,In intersection,Green
+,,,,,,,,,
+P 11/22/2019 10:47:35 AM,,,,,,,,,
+,7,16.31638,0,0,0,-77.4,277.5,out of intersection,Green
+,,17.61653,0,0,0,-83.7,281.2,out of intersection,Green
+,,18.30169,0,0,0,-90.9,285.2,out of intersection,Green
+,,18.71159,96.47059,0,0,-98.1,289.1,out of intersection,Green
+,,4.686711,100,0,0,-101.3,290.9,out of intersection,Green
+,,1.13E-05,0,0,0,-101.4,290.9,out of intersection,Green
+,,6.73E-08,0,0,0,-101.4,290.9,out of intersection,Green
+,,2.01E-07,0,0,0,-101.4,290.9,out of intersection,Green
+,,1.66E-07,0,0,0,-101.4,290.9,out of intersection,Green
+,,5.810585,0,0,0,-102,291.2,out of intersection,Green
+,,13.72396,0,0,0,-106.6,293.7,out of intersection,Green
+,,17.21491,0,71.76471,0,-112.9,297,out of intersection,Green
+,,16.39837,0,0,0,-119.4,300.5,out of intersection,Green
+,,13.85587,0,0,0,-125.5,303.7,out of intersection,Green
+,,12.92726,0,0,0,-130.4,306.3,out of intersection,Green
+,,10.98717,0,0,0,-135.4,308.9,out of intersection,Green
+,,9.699042,0,0,0,-139.2,310.9,out of intersection,Green
+,,8.562005,0,0,0,-142.7,312.7,out of intersection,Green
+,,5.439301,32.15686,0,0,-145.7,314.3,In intersection,Green
+,,5.67E-05,99.60784,0,0,-145.9,314.4,In intersection,Green
+,,4.66E-07,0,0,0,-145.9,314.4,In intersection,Green
+,,2.00E-07,0,34.90196,0,-145.9,314.4,In intersection,Green
+,,6.32E-07,0,100,0,-145.9,314.4,In intersection,Green
+,,3.00E-07,0,0,0,-145.9,314.4,In intersection,Green
+,,6.66E-07,0,0,0,-145.9,314.4,In intersection,Green
+,,4.468019,0,50.58824,0,-146.7,314.9,In intersection,Green
+,,9.987705,0,0,0,-149.8,316.5,In intersection,Green
+,,15.30901,0,0,0,-155.4,319.5,In intersection,Green
+,,20.09354,0,0,0,-162.5,323.4,In intersection,Green
+,,18.58858,0,0,-0.02807185,-169.6,327.5,In intersection,Green
+,7,28.10439,0,0,0,-360.6,440.8,out of intersection,Green
+,,30.56016,0,0,0.05836795,-372.9,448.2,out of intersection,Green
+,,27.50832,0,0,-0.07529452,-382.6,455.7,out of intersection,Green
+,,23.97097,0,0,-0.01329178,-391.9,462.4,out of intersection,Green
+,,21.00041,0,0,0,-400.6,467.8,out of intersection,Green
+,,18.82354,0,0,0,-407.3,472,out of intersection,Green
+,,16.54451,0,0,0,-414.2,476.3,out of intersection,Green
+,,14.07192,0,0,0,-420.1,479.9,out of intersection,Green
+,,12.93182,0,0,-0.1145445,-425,482.9,out of intersection,Green
+,,11.09732,0,0,-0.3891412,-429.8,485.2,out of intersection,Green
+,,9.893814,0,0,-0.4995011,-433.9,486,out of intersection,Green
+,,8.583365,0,0,-0.3995976,-438.4,485.4,out of intersection,Green
+,,11.35238,0,34.90196,-0.4369771,-442,483.9,out of intersection,Green
+,,16.34664,0,0,-0.09866053,-447.3,479.4,out of intersection,Green
+,5,17.55601,0,0,0,-466.9,355.4,out of intersection,Green
+,,20.18399,0,0,0,-459.1,351.4,out of intersection,Green
+,,21.55106,0,0,-0.01347576,-450,346.8,out of intersection,Green
+,,19.6184,0,0,0,-442.6,343.1,out of intersection,Green
+,,17.14602,0,0,0.0208658,-434.9,339.5,out of intersection,Green
+,,15.61128,0,0,0.0306783,-429.1,336.7,out of intersection,Green
+,,13.13452,0,0,0.003755252,-423.1,333.4,out of intersection,Green
+,,11.71822,0,0,0.01997654,-418.3,330.8,out of intersection,Green
+,,14.075,0,100,0.01016404,-413.2,327.9,out of intersection,Green
+,,19.03149,0,100,0.002099393,-406.7,324.1,In intersection,Green
+,,23.18145,0,78.03922,-0.001823417,-398.5,319,In intersection,Green
+,,26.91248,0,0,-0.01464099,-388.7,312.9,In intersection,Green
+,3,23.2823,0,0,0,-175.7,194,out of intersection,Green
+,,23.28221,0,0,0,-167.7,186.5,out of intersection,Green
+,,23.27409,0,0,-0.04763553,-159.9,179.2,out of intersection,Green
+,,21.5261,0,9.019608,-0.06342752,-153,173.1,out of intersection,Green
+,,21.47281,0,0,-0.02994236,-144.8,167.1,out of intersection,Green
+,,19.11321,0,34.90196,-0.04217732,-137,162,out of intersection,Green
+,,23.6252,0,47.45098,-0.030341,-129,157.2,In intersection,Green
+,,27.59429,0,14.5098,0,-118.8,151.7,In intersection,Green
