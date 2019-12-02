@@ -53,7 +53,11 @@ with open('./assets/Data1.csv') as csv_file:
 	print("Average Linear Smoothness ", aveLinearSmoothness)
 	print("Average Cosine Smoothness ", aveCosSmoothness)
 
-
+	count = 1
+	print("  ")
+	for entry in stored:
+		print(count, ": ", entry["linearSmoothness"], "  ",entry["CosBrakeSmoothness"])
+		count += 1
 with open('./assets/Data1.csv') as csv_file:
 	with open('./assets/Data1Test.csv', 'w') as csv_out:
 		#write outputted cosine curves

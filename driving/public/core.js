@@ -8,7 +8,7 @@ const chart = d3.select("#chart")
               .attr("height", h)
               .attr("class","chart");
 
-d3.request("./assets/Data2.csv")
+d3.request("./assets/Data1Test.csv")
 		.mimeType("text/csv")
 		.response(function (xhr) {
 			var data = d3.csvParse(xhr.responseText);
@@ -75,6 +75,21 @@ d3.request("./assets/Data2.csv")
 		        .y(function(d,i) {return brakeYScale(d[2])})
 		    );
 
+		    var maxCosCurve = d3.max(data, datum => datum[7]);
+		    var CosCurveScale = d3.scaleLinear()
+		    	.domain([0, maxCosCurve])
+		    	.range([h - padding, padding])
+		    chart.append("path")
+		      .datum(data)
+		      .attr("fill", "none")
+		      .attr("stroke", "yellow")
+		      .attr("stroke-width", 1.5)
+		      .attr("id", "cosCurve")
+		      .attr("d", d3.line()
+		        .x(function(d,i) {return xScale(i) })
+		        .y(function(d,i) {return CosCurveScale(d[7])})
+		    );
+
 		    var maxGas = d3.max(data, datum => datum[3]);
 
 			var gasYScale = d3.scaleLinear()
@@ -139,5 +154,10 @@ function toggleGas() {
 function toggleSteering() {
 	var opacity = d3.select("#steeringOverlay").style("opacity");
 	d3.selectAll("#steeringOverlay").transition().style("opacity", opacity == 1 ? 0:1);;
+}
+
+function toggleCos() {
+	var opacity = d3.select("#cosCurve").style("opacity");
+	d3.selectAll("#cosCurve").transition().style("opacity", opacity == 1 ? 0:1)
 }
 

@@ -15,22 +15,24 @@ def buildCosArr(y1, y2, length):
 		returnArr.append(cosineInterpolation(y1,y2,mu))
 	return returnArr
 
-def maxDist(curve):
+def maxDist(minimum, maximum, curve):
 	#given a curve determines the max distance sum from the curve
-	#assuming the curve ranges from 0 to 100
+	median = minimum + ((maximum - minimum) / 2)
 	maxDistSum = 0
 	for value in curve:
-		if value < 50:
-			maxDistSum += 100 - value
+		if value < median:
+			maxDistSum += maximum - value
 		else:
-			maxDistSum += value
+			maxDistSum += value - minimum
 	return maxDistSum
 
 def CosSmoothness(dataObj):
 	#split it into two parts, going up then going down
 	half = int(dataObj["length"] / 2)
-	leftSide = buildCosArr(0, 100, half + 1)
-	rightSide = buildCosArr(100, 0, dataObj["length"] - half + 1)
+	maximum = max(dataObj["brake"])
+
+	leftSide = buildCosArr(0, maximum, half + 1)
+	rightSide = buildCosArr(maximum, 0, dataObj["length"] - half + 1)
 	
 	curve = leftSide + rightSide
 
@@ -46,7 +48,7 @@ def CosSmoothness(dataObj):
 	#sumChange now holds the total distance from the perfect curve
 	
 	#worstChange is opposite of bell curve
-	worstChange = maxDist(curve)
+	worstChange = maxDist(0, maximum, curve)
 
 	percent = 1 - (sumChange / worstChange)
 	#print(percent) 
