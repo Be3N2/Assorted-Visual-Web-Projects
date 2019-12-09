@@ -11,7 +11,10 @@ def cosineInterpolation(y1, y2, mu):
 def buildCosArr(y1, y2, length):
 	returnArr = []
 	for i in range(length):
-		mu = scaleValues(0, length - 1, i)
+		if length != 1:
+			mu = scaleValues(0, length - 1, i)
+		else:
+			mu = i
 		returnArr.append(cosineInterpolation(y1,y2,mu))
 	return returnArr
 

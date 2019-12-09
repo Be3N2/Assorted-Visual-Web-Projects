@@ -38,7 +38,7 @@ function drawSteeringChart(data) {
 		      .attr("id", "steering")
 		      .attr("d", d3.line()
 		        .x(function(d,i) {return xScale(i) })
-		        .y(function(d) { return yScale(d[4]) })
+		        .y(function(d) {return yScale(d[4]) })
 		 	  ); 
 	steeringChart.append("path")
 		      .datum(data)

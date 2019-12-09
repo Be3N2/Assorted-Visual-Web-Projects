@@ -8,7 +8,7 @@ const chart = d3.select("#chart")
               .attr("height", h)
               .attr("class","chart");
 
-d3.request("./assets/Data1Test.csv")
+d3.request("./assets/Data3Test.csv")
 		.mimeType("text/csv")
 		.response(function (xhr) {
 			var data = d3.csvParse(xhr.responseText);
@@ -75,7 +75,9 @@ d3.request("./assets/Data1Test.csv")
 		        .y(function(d,i) {return brakeYScale(d[2])})
 		    );
 
-		    var maxCosCurve = d3.max(data, datum => datum[7]);
+		    //cosine is always last column in processed data
+		    var cosLocation = data[0].length - 1;
+		    var maxCosCurve = d3.max(data, datum => datum[cosLocation]);
 		    var CosCurveScale = d3.scaleLinear()
 		    	.domain([0, maxCosCurve])
 		    	.range([h - padding, padding])
@@ -87,7 +89,7 @@ d3.request("./assets/Data1Test.csv")
 		      .attr("id", "cosCurve")
 		      .attr("d", d3.line()
 		        .x(function(d,i) {return xScale(i) })
-		        .y(function(d,i) {return CosCurveScale(d[7])})
+		        .y(function(d,i) {return CosCurveScale(d[cosLocation])})
 		    );
 
 		    var maxGas = d3.max(data, datum => datum[3]);
