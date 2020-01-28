@@ -11,9 +11,9 @@ with open('./assets/Data3.csv') as csv_file:
 	csv_reader = csv.reader(csv_file, delimiter=',')
 	line_count = 0
 	started = False
-	emptyObj = {"brake": [], "speed": [], "length": 0, "start": 0, "stop": 0}
+	emptyObj = {"brake": [], "speed": [], "direction": "pos", "length": 0, "start": 0, "stop": 0}
 	
-	brakeColumnNum = 0
+	steeringColumnNum = 0
 	speedColumnNum = 0
 
 	#read and calculate
@@ -22,16 +22,18 @@ with open('./assets/Data3.csv') as csv_file:
 		if line_count == 0:
 			for i in range(len(row)):
 				print(row[i])
-				if row[i] == "Brake":
-					brakeColumnNum = i
+				if row[i] == "Steering":
+					steeringColumnNum = i
 				if row[i] == "Speed":
 					speedColumnNum = i
 		if line_count > 0:
-			if float(row[brakeColumnNum]) > 1:
+			if float(row[steeringColumnNum]) > 0.15 or float(row[steeringColumnNum]) < -0.15:
+				if float(row[steeringColumnNum]) < -0.15:
+					emptyObj["direction"] = "neg"
 				if started == False:
 					emptyObj["start"] = line_count
 					started = True
-				emptyObj["brake"].append(float(row[brakeColumnNum]))
+				emptyObj["brake"].append(float(row[steeringColumnNum]))
 				emptyObj["speed"].append(float(row[speedColumnNum]))
 			elif started == True:
 				#end the data collection
@@ -39,12 +41,12 @@ with open('./assets/Data3.csv') as csv_file:
 				emptyObj["length"] = line_count - emptyObj["start"]
 				stored.append(emptyObj)
 				#reset the data objects
-				emptyObj = {"brake": [], "speed": [], "length": 0, "start": 0, "stop": 0}
+				emptyObj = {"brake": [], "speed": [], "direction": "pos", "length": 0, "start": 0, "stop": 0}
 				started = False
 
 		line_count += 1
 
-	#The data is split into each section the brake was used
+	#The data is split into each section the steering was used
 	#for each section there exists an object in stored
 
 	#for each entry now add linearSmoothness, CosSmoothness
@@ -66,6 +68,7 @@ with open('./assets/Data3.csv') as csv_file:
 	count = 1
 	print("  ")
 	for entry in stored:
+		print(entry)
 		print(count, ": ", entry["linearSmoothness"], "  ",entry["CosBrakeSmoothness"])
 		count += 1
 

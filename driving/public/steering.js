@@ -58,6 +58,22 @@ function drawSteeringChart(data) {
 		      .attr("id", "steering")
 		      .attr("d", d3.line()
 		        .x(function(d,i) {return xScale(i) })
-		        .y(function(d) { return yScale(-0.18) })
-		 	  );         
+		        .y(function(d) { return yScale(-0.15) })
+		 	  );  
+	//cosine is always last column in processed data
+	var cosLocation = data[0].length - 1;
+	var maxCosCurve = d3.max(data, datum => datum[cosLocation]);
+	var CosCurveScale = d3.scaleLinear()
+		.domain([-1, 1])
+		.range([h - padding, padding])
+	steeringChart.append("path")
+	  .datum(data)
+	  .attr("fill", "none")
+	  .attr("stroke", "yellow")
+	  .attr("stroke-width", 1.5)
+	  .attr("id", "cosCurveSteering")
+	  .attr("d", d3.line()
+	    .x(function(d,i) {return xScale(i) })
+	    .y(function(d,i) {return CosCurveScale(d[cosLocation])})
+	);       
 }

@@ -33,6 +33,8 @@ def CosSmoothness(dataObj):
 	#split it into two parts, going up then going down
 	half = int(dataObj["length"] / 2)
 	maximum = max(dataObj["brake"])
+	if (dataObj["direction"] == "neg"):
+		maximum = min(dataObj["brake"])
 
 	leftSide = buildCosArr(0, maximum, half + 1)
 	rightSide = buildCosArr(maximum, 0, dataObj["length"] - half + 1)
