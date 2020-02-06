@@ -210,7 +210,7 @@ function lateralPosition(playerX_Array, playerZ_Array, nodeX_Array, nodeZ_Array)
 			
 			//console.log("previous pair", previousNodeX, ", " , previousNodeZ);
 			//console.log("current pair", currentNodeX, ", " , currentNodeZ);
-			//console.log("Car location", nodeX_Array[i], ", " , nodeZ_Array[i]);
+			//console.log("Car location", playerX_Array[i], ", " , playerZ_Array[i]);
 			//console.log("formula slope b", slope, ", " , b);
 			//nodes should be properly selected
 
@@ -249,13 +249,13 @@ function lateralPosition(playerX_Array, playerZ_Array, nodeX_Array, nodeZ_Array)
 		}
 	}
 	var validArray = lateralDistance.slice(lastUnknown+1, lateralDistance.length);
-	console.log(validArray);
+	//console.log("Lateral position array", validArray);
 	console.log("Mean of lateral position", mean(validArray));
 	console.log("Standard deviation of lateral position", standardDev(validArray));
 }
 
 processData(testData);
 console.log(cleanedData);
-console.log("Mean Decelerations", calcDecel(cleanedData["Speed"][1]));
+console.log("Mean Deceleration", calcDecel(cleanedData["Speed"][1]));
 
-lateralPosition(cleanedData["Player PositionX"][0], cleanedData["Player PositionZ"][0], cleanedData["Current/Next-Node-Pos-X"][0], cleanedData["Current/Next-Node-Pos-Z"][0]);
+lateralPosition(cleanedData["Player PositionX"][1], cleanedData["Player PositionZ"][1], cleanedData["Current/Next-Node-Pos-X"][1], cleanedData["Current/Next-Node-Pos-Z"][1]);
