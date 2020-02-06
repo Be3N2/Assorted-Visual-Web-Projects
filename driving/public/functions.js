@@ -66,9 +66,10 @@ function rootMeanSquare(input, curve) {
 	*/
 	let sum = 0;
 	for (let i = 0; i < input.length; i++) {
-		sum += Math.pow((curve[i] - input[i]), 2) / input.length;
+		sum += Math.pow((curve[i] - input[i]), 2);
 	}
-	return Math.sqr(sum);
+	sum = sum / input.length;
+	return Math.sqrt(sum);
 
 }
 
