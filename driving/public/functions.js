@@ -179,9 +179,44 @@ function calcDecel(speed) {
 //takes playerX array, playerZ array, nodeX array, nodeZ array returns an array of lateral distances
 function lateralPosition(playerX_Array, playerZ_Array, nodeX_Array, nodeZ_Array) {
 
+	//return array
+	var lateralDistance = [];
+
 	//must have two nodes to find the lateral distance
 	//so first find the second ever node
+	var firstNodeX = nodeX_Array[0];
+	var firstNodeZ = nodeZ_Array[0];
+
+	var previousNodeX = firstNodeX;
+	var previousNodeZ = firstNodeZ;
+
+	var currentNodeX = firstNodeX;
+	var currentNodeZ = firstNodeZ;
+
+	//for every player point, using the current node and the previous node to find the closest point on the line between those two points
+
+	for (var i = 0; i < playerX_Array.length; i++) {
+		if (nodeX_Array[i] != firstNodeX) { //if past the first node
+			if (currentNodeX != nodeX_Array[i] || currentNodeZ != nodeZ_Array[i]) {
+				//on a new node so move the nodes forward
+				previousNodeX = currentNodeX;
+				previousNodeZ = currentNodeZ;
+
+				currentNodeX = nodeX_Array[i];
+				currentNodeZ = nodeZ_Array[i];
+			}
+			console.log("previous pair", previousNodeX, ", " , previousNodeZ);
+			console.log("current pair", currentNodeX, ", " , currentNodeZ);
+			//nodes should be properly selected
+
+		} else {
+			lateralDistance.push(-999999); //flag value for invalid there is not two nodes to find road centerline
+		}
+	}
 }
 
 processData(testData);
+console.log(cleanedData);
 console.log("Mean Decelerations", calcDecel(cleanedData["Speed"][1]));
+
+lateralPosition(cleanedData["Player PositionX"][0], cleanedData["Player PositionZ"][0], cleanedData["Current/Next-Node-Pos-X"][0], cleanedData["Current/Next-Node-Pos-Z"][0]);
