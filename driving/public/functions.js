@@ -15,7 +15,14 @@ Data collection
 	fail_time: 3,
 	speed: [],
 	gas: [],
-	steering: [],
+	steering: {
+		start: index,
+		stop: index,
+		length: x,
+		direction: 0/1
+		data: [],
+		cosineApprox = {[],[]}
+	},
 	posX: [],
 	posZ: [],
 	intersection: [],
@@ -67,6 +74,7 @@ function rootMeanSquare(input, curve) {
 		Assuming input is y data and curve is yhat and that the length of both is the same.
 		(Which I can guarantee as it will be the cut out length of data in which the turn curve is created for)
 	*/
+
 	let sum = 0;
 	for (let i = 0; i < input.length; i++) {
 		sum += Math.pow((curve[i] - input[i]), 2);
@@ -259,3 +267,139 @@ console.log(cleanedData);
 console.log("Mean Deceleration", calcDecel(cleanedData["Speed"][1]));
 
 lateralPosition(cleanedData["Player PositionX"][1], cleanedData["Player PositionZ"][1], cleanedData["Current/Next-Node-Pos-X"][1], cleanedData["Current/Next-Node-Pos-Z"][1]);
+
+function scaleValues(minV, maxV, value) {
+	var valueRange = maxV - minV
+	return value / valueRange
+}
+
+function cosineInterpolation(y1, y2, mu) {
+	var mu2 = (1 - Math.cos(mu * Math.PI)) / 2;
+	return y1 * (1 - mu2) + y2 * mu2
+}
+
+//starting y value then ending value, duration of lenth
+function buildCosArr (y1, y2, length) {
+	var returnArr = [];
+	var mu;
+	for (var i = 0; i < length; i++) {
+		if (length != 1) {
+			mu = scaleValues(0, length - 1, i);
+		} else {
+			mu = i;
+		}
+		returnArr.push(cosineInterpolation(y1, y2, mu));
+	} 
+	return returnArr
+}
+
+function genCurvesAndError(drivingDataObj) {
+		/*
+	build the data obj 
+	drivingDataObj = {
+		start = index
+		stop = index
+		length = val
+		direction = direction[]
+		turnData = []
+		cosineApprox = [[],[]]
+		error = [] 
+	} 
+	*/
+
+	drivingDataObj["cosineApprox"] = [];
+	drivingDataObj["error"] = [];
+	
+	for (var i = 0; i < drivingDataObj.start.length; i++) {
+		//for every turn in the obj find cosine wave, and error
+
+		var midpoint = Math.floor(drivingDataObj.length[i] / 2);
+		var turnData = drivingDataObj["turnData"].slice(drivingDataObj.start[i], drivingDataObj.end[i] + 1);
+		var peak = max(turnData);
+
+		if (drivingDataObj.direction[i] == -1) {
+			peak = min(turnData);
+		} 
+
+		var leftSide = buildCosArr(0, peak, midpoint + 1);
+		console.log("peak", peak)
+		console.log("midpoint", midpoint)
+		console.log("leftSide", leftSide)
+
+		var rightSide = buildCosArr(peak, 0, drivingDataObj["length"][i] - midpoint + 1)
+
+		console.log("actual length", drivingDataObj["length"][i])
+		console.log("generated length", midpoint + drivingDataObj["length"][i] - midpoint)
+
+		var cosineCurve = leftSide.concat(rightSide);
+		//delete the leading and final 0
+		cosineCurve.shift();
+		cosineCurve.pop();
+
+		drivingDataObj["cosineApprox"].push(cosineCurve);
+		var error = rootMeanSquare(turnData, cosineCurve);
+		drivingDataObj["error"].push(error);
+	}
+
+	return drivingDataObj;
+}
+
+function determineTurns(drivingData) {
+	var boolStarted = false;
+	var start = [];
+	var end = [];
+	var length = [];
+	var direction = []; //1 if left -1 of rit
+	var turnCount = 0;
+	for (var i = 0; i < drivingData.length; i++) {
+		if (drivingData[i] > 0.15 || drivingData < -0.15) {
+			if (!boolStarted) {
+				start[turnCount] = i;
+				boolStarted = true;
+				direction[turnCount] = 1;
+				if (drivingData[i] < -0.15) direction[turnCount] = -1;
+			}
+		} else if (boolStarted) {
+			//stop
+			end[turnCount] = i - 1;
+			boolStarted = false;
+			length[turnCount] = end[turnCount] - start[turnCount];
+			turnCount += 1;
+			
+		}
+	}
+	//should it include turning at the end of the simulation?
+	if (boolStarted) {
+		start.pop();
+		direction.pop();
+	}
+		
+	var steeringDataObj = {
+		"start": start,
+		"end": end,
+		"length": length,
+		"direction": direction,
+		"turnData": drivingData
+	};
+
+	return steeringDataObj;
+
+}
+
+function max(array) {
+	var max = array[0];
+	for (var i = 1; i < array.length; i++) {
+		if (max < array[i]) max = array[i];
+	}
+	return max;
+}
+
+function min(array) {
+	var min = array[0];
+	for (var i = 1; i < array.length; i++) {
+		if (min > array[i]) min = array[i];
+	}
+	return min;
+}
+
+console.log(genCurvesAndError(determineTurns(cleanedData["Steering"][1])));
