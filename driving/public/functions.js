@@ -193,6 +193,8 @@ function lateralPosition(playerX_Array, playerZ_Array, nodeX_Array, nodeZ_Array)
 	var currentNodeX = firstNodeX;
 	var currentNodeZ = firstNodeZ;
 
+	var lastUnknown = 0;
+
 	//for every player point, using the current node and the previous node to find the closest point on the line between those two points
 
 	for (var i = 0; i < playerX_Array.length; i++) {
@@ -205,14 +207,51 @@ function lateralPosition(playerX_Array, playerZ_Array, nodeX_Array, nodeZ_Array)
 				currentNodeX = nodeX_Array[i];
 				currentNodeZ = nodeZ_Array[i];
 			}
-			console.log("previous pair", previousNodeX, ", " , previousNodeZ);
-			console.log("current pair", currentNodeX, ", " , currentNodeZ);
+			
+			//console.log("previous pair", previousNodeX, ", " , previousNodeZ);
+			//console.log("current pair", currentNodeX, ", " , currentNodeZ);
+			//console.log("Car location", nodeX_Array[i], ", " , nodeZ_Array[i]);
+			//console.log("formula slope b", slope, ", " , b);
 			//nodes should be properly selected
 
+			//have (x1,y1) (x2,y2) now calculate y = mx+b 
+			//var slope = (y1 - y2) / (x1 - x2);
+			//var b = y1 - slope * x1;
+			var slope = (currentNodeZ - previousNodeZ) / (currentNodeX - previousNodeX);
+			var b = currentNodeZ - slope * currentNodeX;
+			//formula for the road centerline = y = slope x + b
+
+			//now find perpendicular line in which the location of the car is on
+			var inverseSlope = -1 * (1 / slope);
+			var carB = playerZ_Array[i] - inverseSlope * playerX_Array[i];
+			//formula for the perpendicular line through the car is y = inverseSlope x + carB
+
+			//let y2 = m2 x2 + b2 be y = inverseSlope x + carB
+			//let y1 = m1 x1 + b1 be y = slope x + b
+			//formula derived from the intersection of two lines
+			var intersectionPointX = (carB - b ) / (slope - inverseSlope);
+
+			//plug into either y = mx + b formulas
+			var intersectionPointZ = slope * intersectionPointX + b;
+			var intersectionPointZTest = inverseSlope * intersectionPointX + carB;
+			//console.log("intersection point test", intersectionPointX, intersectionPointZ, intersectionPointZTest);
+
+			//now the distance at the intersectionPoint to the car location is the shortest distance & the lateral position
+			//distance formula based on c^2 = a^2 + b^2
+			//let (x1,y1) be the location of the car, (x2,y2) be the intersection point
+			var distance = Math.sqrt(Math.pow(intersectionPointZ - playerZ_Array[i], 2) + Math.pow(intersectionPointX - playerX_Array[i], 2));
+			lateralDistance.push(distance);
+			
+
 		} else {
+			lastUnknown = i;
 			lateralDistance.push(-999999); //flag value for invalid there is not two nodes to find road centerline
 		}
 	}
+	var validArray = lateralDistance.slice(lastUnknown+1, lateralDistance.length);
+	console.log(validArray);
+	console.log("Mean of lateral position", mean(validArray));
+	console.log("Standard deviation of lateral position", standardDev(validArray));
 }
 
 processData(testData);
