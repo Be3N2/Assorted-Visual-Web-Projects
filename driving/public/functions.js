@@ -19,7 +19,7 @@ Data collection
 		start: index,
 		stop: index,
 		length: x,
-		direction: 0/1
+		direction: 0/1,
 		data: [],
 		cosineApprox = {[],[]}
 	},
@@ -31,17 +31,7 @@ Data collection
 	nodeAngle: []
 },
 {
-	participant_id: 42,
-	fail_time: 5,
-	speed: [],
-	gas: [],
-	steering: [],
-	posX: [],
-	posZ: [],
-	intersection: [],
-	nodeX: [],
-	nodeZ: [],
-	nodeAngle: []
+
 }
 */
 
@@ -262,12 +252,6 @@ function lateralPosition(playerX_Array, playerZ_Array, nodeX_Array, nodeZ_Array)
 	console.log("Standard deviation of lateral position", standardDev(validArray));
 }
 
-processData(testData);
-console.log(cleanedData);
-console.log("Mean Deceleration", calcDecel(cleanedData["Speed"][1]));
-
-lateralPosition(cleanedData["Player PositionX"][1], cleanedData["Player PositionZ"][1], cleanedData["Current/Next-Node-Pos-X"][1], cleanedData["Current/Next-Node-Pos-Z"][1]);
-
 function scaleValues(minV, maxV, value) {
 	var valueRange = maxV - minV
 	return value / valueRange
@@ -324,14 +308,17 @@ function genCurvesAndError(drivingDataObj) {
 		var leftSide = buildCosArr(0, peak, midpoint + 1);
 		console.log("peak", peak)
 		console.log("midpoint", midpoint)
-		console.log("leftSide", leftSide)
+		//console.log("leftSide", leftSide)
 
-		var rightSide = buildCosArr(peak, 0, drivingDataObj["length"][i] - midpoint + 1)
+		var rightSide = buildCosArr(peak, 0, drivingDataObj["length"][i] - midpoint + 2)
 
-		console.log("actual length", drivingDataObj["length"][i])
-		console.log("generated length", midpoint + drivingDataObj["length"][i] - midpoint)
+		//console.log("actual length", drivingDataObj["length"][i]);
+		//console.log("generated length", drivingDataObj["length"][i]);
 
 		var cosineCurve = leftSide.concat(rightSide);
+		//console.log("concat length", cosineCurve.length - 2);
+		//console.log("turnData length", turnData.length);
+
 		//delete the leading and final 0
 		cosineCurve.shift();
 		cosineCurve.pop();
@@ -401,5 +388,11 @@ function min(array) {
 	}
 	return min;
 }
+
+processData(testData);
+console.log(cleanedData);
+console.log("Mean Deceleration", calcDecel(cleanedData["Speed"][1]));
+
+lateralPosition(cleanedData["Player PositionX"][1], cleanedData["Player PositionZ"][1], cleanedData["Current/Next-Node-Pos-X"][1], cleanedData["Current/Next-Node-Pos-Z"][1]);
 
 console.log(genCurvesAndError(determineTurns(cleanedData["Steering"][1])));
